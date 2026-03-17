@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Lineach | Get a Free Piping Quote</title>
+    <meta name="description" content="Contact Lineach for piping and welding projects across Ireland. Fast quotes and expert guidance from certified engineers.">
+    <meta name="robots" content="index,follow">
+    <link rel="icon" type="image/png" href="/images/lc-logo copy.png">
+    <link rel="apple-touch-icon" href="/images/lc-logo copy.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        :root{--navy:#003366;--cyan:#00AEEF}
+        body{font-family:Roboto, "Open Sans", Arial, sans-serif;color:#222}
+        .navbar{background:var(--navy)}
+        .navbar .nav-link,.navbar-brand{color:#fff}
+        .navbar .nav-link.active,.navbar .nav-link:hover{color:var(--cyan)}
+        .footer{background:#0a2a4d;color:#cbd6e2}
+        .footer a{color:#cbd6e2}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top" aria-label="Main Navigation">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">Lineach</a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/services/">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/contact/">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-5 bg-light border-bottom">
+        <div class="container">
+            <h1 class="display-6 mb-2">Contact Us</h1>
+            <p class="lead mb-0">We typically respond within one business day.</p>
+        </div>
+    </header>
+
+    <main class="py-5" id="quote">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <h2 class="h4">Request a Free Piping Quote</h2>
+                    <form id="leadForm" action="https://formspree.io/f/your-id" method="POST" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Name *</label>
+                                <input id="name" name="name" type="text" class="form-control" required aria-required="true" autocomplete="name">
+                                <div class="invalid-feedback">Please enter your name.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="company" class="form-label">Company</label>
+                                <input id="company" name="company" type="text" class="form-control" autocomplete="organization">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email *</label>
+                                <input id="email" name="email" type="email" class="form-control" required aria-required="true" autocomplete="email" inputmode="email">
+                                <div class="invalid-feedback">Enter a valid email address.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input id="phone" name="phone" type="tel" class="form-control" autocomplete="tel" inputmode="tel">
+                                <div class="form-text">Click to call: <a href="tel:+353879199059">+353 87 919 9059</a></div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="service" class="form-label">Service *</label>
+                                <select id="service" name="service" class="form-select" required aria-required="true">
+                                    <option value="" selected disabled>Select a service</option>
+                                    <option>Utility Piping</option>
+                                    <option>Instrument Piping</option>
+                                    <option>Process Piping</option>
+                                    <option>High Purity Piping</option>
+                                    <option>Welding</option>
+                                    <option>Other</option>
+                                </select>
+                                <div class="invalid-feedback">Please choose a service.</div>
+                            </div>
+                            <div class="col-12">
+                                <label for="details" class="form-label">Project Details *</label>
+                                <textarea id="details" name="details" class="form-control" rows="5" required aria-required="true"></textarea>
+                                <div class="invalid-feedback">Please describe your project.</div>
+                            </div>
+                            <div class="col-12 d-flex align-items-center gap-3">
+                                <button type="submit" class="btn btn-primary">Send Request</button>
+                                <a href="mailto:dean@lineach.com" class="link-secondary">Or email dean@lineach.com</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-5">
+                    <div class="ratio ratio-4x3 rounded overflow-hidden shadow-sm">
+                        <iframe title="Lineach Location Map" src="https://www.google.com/maps?q=Ardnamullan%2C%20Clonard%2C%20Co%20Meath%2C%20Ireland&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="mt-3">
+                        <div><strong>Phone:</strong> <a href="tel:+353879199059">+353 87 919 9059</a></div>
+                        <div><strong>Email:</strong> <a href="mailto:dean@lineach.com">dean@lineach.com</a></div>
+                        <div><strong>Address:</strong> Ardnamullan, Clonard, Co Meath</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer py-4 mt-4" role="contentinfo">
+        <div class="container">
+            <div class="row g-3 align-items-center">
+                <div class="col-md">
+                    <div>© 2025 Lineach | All Rights Reserved</div>
+                </div>
+                <div class="col-md text-md-end">
+                    <a href="/privacy/" class="me-3">Privacy</a>
+                    <a href="/terms/" class="me-3">Terms</a>
+                    <a href="/services/">Other Services</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        const leadForm = document.getElementById('leadForm');
+        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        leadForm.addEventListener('submit', function(e){
+            let valid = true;
+            ['name','email','service','details'].forEach(id => {
+                const el = document.getElementById(id);
+                if (!el.value || (id==='email' && !emailRe.test(el.value))) { el.classList.add('is-invalid'); valid = false; }
+                else { el.classList.remove('is-invalid'); el.classList.add('is-valid'); }
+            });
+            if (!valid) { e.preventDefault(); e.stopPropagation(); }
+        });
+        ['name','email','service','details'].forEach(id => {
+            const el = document.getElementById(id);
+            el.addEventListener('input', () => { el.classList.remove('is-invalid'); });
+        });
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lineach Steel Detailing Services</title>
+  <meta name="description" content="Lineach provides precision steel detailing services backed by real-world metal fabrication and construction management expertise." />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <style>
+    header.hero-header {
+      margin-bottom: 0;
+      padding-bottom: 1rem;
+    }
+    .features-section {
+      padding-top: 1rem !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/lc-logo.png" alt="Lineach Construction Logo" width="200" height="60" />
+      </a>
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Features -->
+  <section class="features-section">
+    <h2>What We Offer</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <i class="fas fa-drafting-compass"></i>
+        <h3>Fabrication-Ready Drawings</h3>
+        <p>Detailed shop and GA drawings tailored for efficient on-site execution.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-cube"></i>
+        <h3>3D BIM Integration</h3>
+        <p>Collaborative 3D coordination with Tekla, AutoCAD & Revit for clash-free builds.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-check-circle"></i>
+        <h3>Constructability Review</h3>
+        <p>Each detail is verified for real-world constructability and sequencing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="testimonial-section">
+    <div class="testimonial">
+      <i class="fas fa-quote-left"></i>
+      <p>“Steel detailing shouldn’t slow your project down — it should drive it forward. At Lineach, every drawing we deliver is engineered for action: crystal-clear, clash-free, and constructible. We speak fabrication fluently — because we've lived it.”</p>
+      <span class="testimonial-author">— Lineach Steel Detailing</span>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Need Reliable Steel Drawings?</h2>
+    <p>Get a quote within 24 hours. Let’s get your project started right.</p>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-section" id="contact-form">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h3>Email</h3>
+            <p><a href="mailto:dean@lineach.com">dean@lineach.com</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <div>
+            <h3>Phone</h3>
+            <p><a href="tel:0879199059">087 919 9059</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h3>Address</h3>
+            <p>Ardnamullan, Co Meath, A83 FC42</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" method="POST" data-netlify="true" name="contact">
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Full Name" required aria-label="Your Full Name" autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Work Email" required aria-label="Work Email" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <input type="tel" name="phone" placeholder="Phone Number" required aria-label="Phone Number" autocomplete="tel" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="company" placeholder="Company Name" required aria-label="Company Name" autocomplete="organization" />
+        </div>
+        <div class="form-group">
+          <textarea name="message" placeholder="Comments" required aria-label="Message" rows="4" autocomplete="on"></textarea>
+        </div>
+        <label class="gdpr-checkbox">
+          <input type="checkbox" name="gdpr" required />
+          <span>I agree to receive updates about my request from Lineach Construction</span>
+        </label>
+        <button type="submit" class="cta-button" id="submitBtn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:dean@lineach.com">dean@lineach.com</a></p>
+        <p>Phone: <a href="tel:0879199059">087 919 9059</a></p>
+        <p>Address: Ardnamullan, Co Meath, A83 FC42</p>
+        <p>Hours: 8am to 6pm, Mon-Sat</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="#contact-form">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© 2025 Lineach Construction. All rights reserved.</p>
+  </footer>
+
+  <!-- JS: Submit handler with spinner -->
+  <script>
+    document.querySelector('.contact-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.classList.add('btn-loading');
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        });
+
+        if (response.ok) {
+          alert('Thank you for reaching out! We will review your message and get back to you within 24 hours.');
+          form.reset();
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('There was an error submitting the form. Please try again or contact us directly.');
+      } finally {
+        submitBtn.classList.remove('btn-loading');
+      }
+    });
+  </script>
+</body>
+</html>
