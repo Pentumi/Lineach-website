@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lineach | Construction Labour Solutions by Builders, Not Recruiters</title>
-    <meta name="description" content="Skilled tradesmen, project-ready in 48 hours. 25 years placing the right people on the right jobs. Construction labour supply for contractors across Ireland.">
+    <title>Lineach — Construction Labour Solutions</title>
+    <meta name="description" content="Skilled tradesmen, project-ready in 48 hours. 25 years placing the right people on the right jobs. Construction labour supply across Ireland.">
     <style>
         * {
             margin: 0;
@@ -12,286 +12,435 @@
             box-sizing: border-box;
         }
         
+        :root {
+            --bg-primary: #000;
+            --bg-secondary: #1d1d1f;
+            --bg-tertiary: #f5f5f7;
+            --text-primary: #fff;
+            --text-secondary: #86868b;
+            --accent: #ff6b35;
+            --font-stack: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: var(--font-stack);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.47059;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+            -webkit-font-smoothing: antialiased;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: #1a1a1a;
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
+        /* Navigation */
         nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 52px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            z-index: 9999;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-content {
+            max-width: 1024px;
+            margin: 0 auto;
+            height: 100%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            padding: 0 22px;
         }
         
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #e67e22;
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
         }
         
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 36px;
             list-style: none;
         }
         
         .nav-links a {
-            color: white;
+            color: var(--text-primary);
             text-decoration: none;
-            transition: color 0.3s;
+            font-size: 12px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            letter-spacing: -0.01em;
         }
         
         .nav-links a:hover {
-            color: #e67e22;
+            opacity: 1;
         }
         
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
-            color: white;
-            padding: 6rem 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            padding: 120px 20px 60px;
+            background: linear-gradient(180deg, #000 0%, #1d1d1f 100%);
         }
         
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
+            font-size: 80px;
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.015em;
+            max-width: 900px;
+            margin-bottom: 24px;
         }
         
-        .hero .highlight {
-            color: #e67e22;
+        .hero .subtitle {
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin-bottom: 40px;
+            line-height: 1.4;
         }
         
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: #e67e22;
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        
-        .cta-button:hover {
-            background: #d35400;
-        }
-        
-        .trust-bar {
-            background: #f8f9fa;
-            padding: 2rem 0;
-            border-bottom: 1px solid #e9ecef;
-        }
-        
-        .trust-items {
+        .cta-group {
             display: flex;
-            justify-content: center;
-            gap: 4rem;
+            gap: 20px;
             flex-wrap: wrap;
+            justify-content: center;
         }
         
-        .trust-item {
-            text-align: center;
+        .cta-primary {
+            background: var(--accent);
+            color: white;
+            padding: 18px 36px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            transition: all 0.3s;
         }
         
-        .trust-item strong {
-            display: block;
-            font-size: 1.5rem;
-            color: #e67e22;
+        .cta-primary:hover {
+            background: #e55a2b;
         }
         
-        .services {
-            padding: 4rem 0;
+        .cta-secondary {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 21px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
-        .services h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
+        .cta-secondary::after {
+            content: "›";
+            font-size: 28px;
         }
         
-        .service-grid {
+        /* Stats Section */
+        .stats {
+            background: var(--bg-tertiary);
+            padding: 100px 20px;
+            color: #1d1d1f;
+        }
+        
+        .stats-grid {
+            max-width: 980px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 64px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+        
+        .stat-item p {
+            font-size: 21px;
+            color: var(--text-secondary);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 120px 20px;
+            background: #000;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+        
+        .section-header h2 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.005em;
+        }
+        
+        .section-header p {
+            font-size: 21px;
+            color: var(--text-secondary);
+        }
+        
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
         
         .service-card {
-            background: white;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 50px 40px;
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: scale(1.02);
         }
         
         .service-card h3 {
-            color: #e67e22;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--accent);
         }
         
-        .why-lineach {
-            background: #f8f9fa;
-            padding: 4rem 0;
+        .service-card p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.5;
         }
         
-        .why-lineach h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+        /* About Section */
+        .about {
+            padding: 120px 20px;
+            background: var(--bg-secondary);
         }
         
-        .why-content {
+        .about-content {
             max-width: 800px;
             margin: 0 auto;
-            font-size: 1.1rem;
+            text-align: center;
         }
         
-        .why-content p {
-            margin-bottom: 1.5rem;
+        .about h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 40px;
         }
         
+        .about p {
+            font-size: 21px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        
+        .about .highlight {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
+        /* CTA Section */
         .cta-section {
-            background: #1a1a1a;
-            color: white;
-            padding: 4rem 0;
+            padding: 120px 20px;
+            background: #000;
             text-align: center;
         }
         
         .cta-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 20px;
         }
         
+        .cta-section p {
+            font-size: 24px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+        
+        /* Footer */
         footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
+            background: var(--bg-secondary);
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            max-width: 980px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-content p {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 12px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 56px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
             .nav-links {
                 display: none;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero .subtitle {
+                font-size: 21px;
+            }
+            
+            .section-header h2 {
+                font-size: 40px;
+            }
+            
+            .cta-section h2 {
+                font-size: 40px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">LINEACH</div>
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="logo">Lineach</a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <section class="hero">
-        <div class="container">
-            <h1>Construction Labour Solutions <span class="highlight">by Builders, Not Recruiters</span></h1>
-            <p>Skilled tradesmen, project-ready in 48 hours. 25 years placing the right people on the right jobs.</p>
-            <a href="#contact" class="cta-button">Get Tradesmen</a>
+        <h1>Construction Labour Solutions by Builders, Not Recruiters</h1>
+        <p class="subtitle">Skilled tradesmen, project-ready in 48 hours. 25 years placing the right people on the right jobs.</p>
+        <div class="cta-group">
+            <a href="#contact" class="cta-primary">Get Tradesmen</a>
+            <a href="#services" class="cta-secondary">Explore Services</a>
         </div>
     </section>
 
-    <section class="trust-bar">
-        <div class="container">
-            <div class="trust-items">
-                <div class="trust-item">
-                    <strong>25+</strong>
-                    Years Construction Experience
-                </div>
-                <div class="trust-item">
-                    <strong>Thin Films</strong>
-                    & Data Centre Specialists
-                </div>
-                <div class="trust-item">
-                    <strong>Fully Vetted</strong>
-                    & Compliant
-                </div>
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>25+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>48hr</h3>
+                <p>Placement Time</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Vetted & Compliant</p>
             </div>
         </div>
     </section>
 
     <section class="services" id="services">
-        <div class="container">
+        <div class="section-header">
             <h2>Our Services</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Skilled Labour Supply</h3>
-                    <p>Electricians, plumbers, carpenters, general operatives. Vetted, experienced tradesmen who hit the ground running. No HR headaches. No compliance gaps. Just reliable labour when you need it.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Project Teams</h3>
-                    <p>Complete crews for 6-12 month projects. We assemble and manage teams from site operatives to skilled trades, keeping your project staffed and on schedule.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Emergency Cover</h3>
-                    <p>Short-term cover for gaps and sick leave. When someone doesn't show up, we get you a replacement fast. Minimise downtime, keep your project moving.</p>
-                </div>
+            <p>From individual tradesmen to complete project teams, we deliver reliable labour when you need it.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Skilled Labour Supply</h3>
+                <p>Electricians, plumbers, carpenters, general operatives. Vetted, experienced tradesmen who hit the ground running. No HR headaches. No compliance gaps.</p>
+            </div>
+            <div class="service-card">
+                <h3>Project Teams</h3>
+                <p>Complete crews for 6-12 month projects. We assemble and manage teams from site operatives to skilled trades, keeping your project staffed and on schedule.</p>
+            </div>
+            <div class="service-card">
+                <h3>Emergency Cover</h3>
+                <p>Short-term cover for gaps and sick leave. When someone doesn't show up, we get you a replacement fast. Minimise downtime, keep your project moving.</p>
             </div>
         </div>
     </section>
 
-    <section class="why-lineach" id="about">
-        <div class="container">
+    <section class="about" id="about">
+        <div class="about-content">
             <h2>Why Lineach?</h2>
-            <div class="why-content">
-                <p>We're not a recruitment agency. We're tradesmen who understand what makes a good tradesman. When you call Lineach, you speak to someone who's stood where you stand.</p>
-                <p>I started as a tradesman. Worked my way up to contracts manager. Spent 25 years on sites, from residential to semiconductor fabs to data centres.</p>
-                <p>I know the frustration of needing good labour and getting excuses. I know the difference between someone who can talk a good job and someone who can actually do it.</p>
-                <p>Lineach is what I wish existed when I was hiring — a labour supplier run by someone who's actually done the work, knows the trades, and understands that your project depends on reliable people showing up and getting the job done.</p>
-            </div>
+            <p><span class="highlight">We're not a recruitment agency.</span> We're tradesmen who understand what makes a good tradesman. When you call Lineach, you speak to someone who's stood where you stand.</p>
+            <p>I started as a tradesman. Worked my way up to contracts manager. Spent 25 years on sites, from residential to semiconductor fabs to data centres.</p>
+            <p>I know the frustration of needing good labour and getting excuses. Lineach is what I wish existed when I was hiring — a labour supplier run by someone who's actually done the work.</p>
         </div>
     </section>
 
     <section class="cta-section" id="contact">
-        <div class="container">
-            <h2>Need Reliable Labour?</h2>
-            <p>Let's talk about your project requirements.</p>
-            <a href="mailto:dean@lineach.com" class="cta-button">Request a Quote</a>
-        </div>
+        <h2>Ready to talk?</h2>
+        <p>Let's discuss your project requirements.</p>
+        <a href="mailto:dean@lineach.com" class="cta-primary">Request a Quote</a>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Lineach. Construction Labour Solutions.</p>
+        <div class="footer-content">
+            <p>&copy; 2026 Lineach. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="mailto:dean@lineach.com">Contact</a>
+            </div>
         </div>
     </footer>
 </body>
