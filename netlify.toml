@@ -5,11 +5,9 @@
 [build.environment]
   # Optional: NODE_VERSION if you add any JS build later
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  # Only if you want SPA-like fallback; for multi-page static site, comment this out or remove
+# No catch-all redirect needed for this multi-page static site.
+# Netlify automatically serves index.html for directories (e.g. /about/ -> /about/index.html).
+# Add specific redirects here only if needed (e.g. old URLs).
 
 [[headers]]
   for = "/*"
