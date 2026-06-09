@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lineach.com/sitemap.xml
+
+# Block any admin or temp paths if they ever exist
+Disallow: /assets/
+Disallow: /*.pdf$

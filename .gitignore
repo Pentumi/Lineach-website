@@ -1,0 +1,29 @@
+# Deployment / build artifacts
+node_modules/
+dist/
+build/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Backup files
+index (1).html
+*.bak
+*.tmp
+
+# Environment / secrets (never commit real keys)
+.env
+.env.local
+formspree-id.txt
+
+# Large assets (upload separately if needed)
+*.zip
+*.tar.gz
+
+# IDE
+.vscode/
+.idea/
