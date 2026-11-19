@@ -369,7 +369,11 @@
                 <div class="col-lg-7">
                     <h2 id="quote-title" class="h1 mb-3">Get a Free Piping Quote</h2>
                     <p>Our engineers respond within one business day. Share your scope, drawings, or specifications.</p>
-                    <form id="leadForm" action="https://formspree.io/f/your-id" method="POST" novalidate>
+                    <form id="leadForm" name="quote" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+                        <input type="hidden" name="form-name" value="quote">
+                        <p class="visually-hidden">
+                            <label>Leave this blank <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+                        </p>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label for="name" class="form-label">Name *</label>
@@ -573,14 +577,14 @@
         const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         leadForm.addEventListener('submit', function(e){
             let valid = true;
-            ['name','email','service','details'].forEach(id => {
+            ['name','email','projectType','details'].forEach(id => {
                 const el = document.getElementById(id);
                 if (!el.value || (id==='email' && !emailRe.test(el.value))) { el.classList.add('is-invalid'); valid = false; }
                 else { el.classList.remove('is-invalid'); el.classList.add('is-valid'); }
             });
             if (!valid) { e.preventDefault(); e.stopPropagation(); }
         });
-        ['name','email','service','details'].forEach(id => {
+        ['name','email','projectType','details'].forEach(id => {
             const el = document.getElementById(id);
             el.addEventListener('input', () => { el.classList.remove('is-invalid'); });
         });

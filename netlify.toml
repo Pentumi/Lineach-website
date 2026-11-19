@@ -17,9 +17,10 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
-# Form handling note:
-# The cleaning sub-site uses Netlify forms (data-netlify="true").
-# Main site forms currently point to Formspree (update the action URL with your real form ID).
+# Form handling:
+# Main quote forms (home, /contact/, /piping-services/) use Netlify Forms, name="quote",
+# and post to /thank-you/. The cleaning sub-site uses a separate Netlify form
+# (name="cleaningservices-lead"). Notifications go to dean@lineach.com.
 
 # Custom domain will be configured in the Netlify dashboard after first deploy.
 # Recommended: Add lineach.com and www.lineach.com in Netlify > Domain settings.

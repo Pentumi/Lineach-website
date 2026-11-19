@@ -26,4 +26,4 @@ formspree-id.txt
 
 # IDE
 .vscode/
-.idea/
+.idea/.netlify/
