@@ -102,6 +102,28 @@
   ]
 }
     </script>
+  <!-- Google Analytics 4 (G-GBF26X42GC): page views + contact click tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBF26X42GC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GBF26X42GC');
+
+    // Track tel: clicks as phone_click and mailto: clicks as email_click
+    document.addEventListener('click', function(e) {
+      var link = e.target && e.target.closest ? e.target.closest('a[href^="tel:"], a[href^="mailto:"]') : null;
+      if (!link) return;
+      var href = link.getAttribute('href') || '';
+      var isTel = href.indexOf('tel:') === 0;
+      gtag('event', isTel ? 'phone_click' : 'email_click', {
+        link_url: href,
+        link_text: (link.textContent || '').trim().slice(0, 100),
+        event_category: 'Contact',
+        event_label: href.replace(/^(tel:|mailto:)/, '')
+      });
+    });
+  </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg sticky-top">
