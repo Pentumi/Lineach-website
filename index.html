@@ -791,6 +791,11 @@
         document.querySelectorAll('a[href="#quote"]').forEach(btn=>btn.addEventListener('click',()=>track('cta_quote_click')));
 
   </script>
+<script>
+  // GA4 form_start: first interaction with the quote form (once per page view), for the start -> submit -> generate_lead funnel
+  (function(){var f=document.querySelector('form[name="quote"]');if(!f)return;var done=false;
+  f.addEventListener('focusin',function(){if(done)return;done=true;try{if(window.gtag){window.gtag('event','form_start',{form_name:'quote',form_page:location.pathname});}}catch(_){}});})();
+</script>
 </body>
 </html> 
 
