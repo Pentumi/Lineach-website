@@ -168,6 +168,29 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+
+    <!-- Mobile call / quote bar (phones only) -->
+    <style>
+      .mobile-cta-bar{display:none}
+      @media (max-width:767.98px){
+        .mobile-cta-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:1030;box-shadow:0 -2px 8px rgba(0,0,0,.2)}
+        .mobile-cta-bar a{flex:1;text-align:center;padding:14px 8px;font-weight:600;font-size:16px;text-decoration:none;color:#fff}
+        .mobile-cta-bar .mcb-call{background:#1e7e34}
+        .mobile-cta-bar .mcb-quote{background:#0b3d91}
+        body{padding-bottom:56px}
+        .sticky-cta{display:none !important}
+      }
+    </style>
+    <nav class="mobile-cta-bar" aria-label="Quick contact">
+      <a class="mcb-call" href="tel:+353879199059" aria-label="Call Lineach on 087 919 9059">Call 087 919 9059</a>
+      <a class="mcb-quote" href="/contact/#quote" data-cta="mobile_bar_quote">Get a free quote</a>
+    </nav>
+    <script>
+      document.addEventListener('click', function(e) {
+        var a = e.target && e.target.closest ? e.target.closest('a[data-cta]') : null;
+        if (a && typeof gtag === 'function') gtag('event', 'cta_click', {cta: a.getAttribute('data-cta'), page_path: location.pathname});
+      });
+    </script>
 </body>
 </html>
 
