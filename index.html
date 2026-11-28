@@ -779,7 +779,14 @@
                 if (!el.value || (id==='email' && !emailRe.test(el.value))) { el.classList.add('is-invalid'); valid = false; }
                 else { el.classList.remove('is-invalid'); el.classList.add('is-valid'); }
             });
-            if (!valid) { e.preventDefault(); e.stopPropagation(); }
+            if (!valid) {
+                e.preventDefault(); e.stopPropagation();
+                try { if (window.gtag) window.gtag('event','form_error',{form_name:'quote',form_page:location.pathname}); } catch(_){}
+            } else {
+                // GA4 quote_submit: valid quote form sent (beacon so it survives the page change); flag lets /thank-you/ count the lead even if the browser strips the referrer
+                try { sessionStorage.setItem('lineach_quote_submitted', location.pathname); } catch(_){}
+                try { if (window.gtag) window.gtag('event','quote_submit',{form_name:'quote',form_page:location.pathname,transport_type:'beacon'}); } catch(_){}
+            }
         });
         ['name','email','projectType','details'].forEach(id => {
             const el = document.getElementById(id);

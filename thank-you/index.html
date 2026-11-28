@@ -48,11 +48,15 @@
     // Quote form landed here after a Netlify Forms POST: record one generate_lead per session
     (function(){
       try {
+        // Count the lead if the visitor came from a lineach.com form page (referrer) OR the form set its submit flag (covers browsers that strip the referrer)
         var ref = document.referrer ? new URL(document.referrer) : null;
-        if (!ref || !/(^|\.)lineach\.com$/.test(ref.hostname) || ref.pathname.indexOf('/thank-you') === 0) return;
+        var fromSite = ref && /(^|\.)lineach\.com$/.test(ref.hostname) && ref.pathname.indexOf('/thank-you') !== 0;
+        var flag = null; try { flag = sessionStorage.getItem('lineach_quote_submitted'); } catch(_){}
+        if (!fromSite && !flag) return;
         if (sessionStorage.getItem('lineach_lead_sent')) return;
         sessionStorage.setItem('lineach_lead_sent', '1');
-        gtag('event', 'generate_lead', { form_name: 'quote', form_page: ref.pathname });
+        try { sessionStorage.removeItem('lineach_quote_submitted'); } catch(_){}
+        gtag('event', 'generate_lead', { form_name: 'quote', form_page: fromSite ? ref.pathname : flag });
       } catch(_){}
     })();
   </script>
